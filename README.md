@@ -7,7 +7,7 @@ This custom function is used for detaching all user-loaded packages in R. This s
 ## How to
 Just create the custom function "detachAllPackages" and run it.
 
-'''
+```
 detachAllPackages <- function() {
   basic.packages <- c("package:stats","package:graphics","package:grDevices","package:utils","package:datasets","package:methods","package:base")
   package.list <- search()[ifelse(unlist(gregexpr("package:",search()))==1,TRUE,FALSE)]
@@ -15,4 +15,4 @@ detachAllPackages <- function() {
   if (length(package.list)>0)  for (package in package.list) detach(package, character.only=TRUE)
 }
 detachAllPackages()
-'''
+```
